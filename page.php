@@ -58,7 +58,7 @@
                             echo "No more Jollibee for you!";
                         endif;
                         wp_reset_postdata();
-                    ?>   
+                    ?>
         </div>
     </div>
 </section>
