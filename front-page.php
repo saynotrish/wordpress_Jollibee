@@ -1,11 +1,18 @@
 <?php get_header(); ?>
 
-    <section class="food py--3">
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+<?php the_content();  ?>
+<?php endwhile;
+        else: echo "No posts!";
+    endif;
+    ?>
+
+    <!-- <section class="food py--3">
         <div class="container">
             <div class="food__header flex justify--between align--center">
             <h2>Best Seller</h2>
             <span></span>
-            <a href="#">View All</a>
+            <a href="<?php echo site_url('/best-seller')?>">View All</a>
             </div>
         </div>
         <div class="container with--overflow">
@@ -40,9 +47,9 @@
                             </div>
                             <div class="price">
                             <p>Start at <br /><span><?php the_field('price');?></span></p>
-                            <p><?php the_field('category');?></p>
                             </div>
                         </div>
+                        <button class="btnAddtoCart">Add To Cart</button>
                     </div>
 
                 <?php endwhile;
@@ -60,7 +67,7 @@
             <div class="food__header flex justify--between align--center">
             <h2>Chicken Joy</h2>
             <span></span>
-            <a href="#">View All</a>
+            <a href="<?php echo site_url('/chicken-joy')?>">View All</a>
             </div>
         </div>
         <div class="container with--overflow">
@@ -95,9 +102,9 @@
                             </div>
                             <div class="price">
                             <p>Start at <br /><span><?php the_field('price');?></span></p>
-                            <p><?php the_field('category');?></p>
                             </div>
                         </div>
+                        <button class="btnAddtoCart">Add To Cart</button>
                     </div>
 
                 <?php endwhile;
@@ -115,7 +122,7 @@
             <div class="food__header flex justify--between align--center">
             <h2>Yumburger</h2>
             <span></span>
-            <a href="#">View All</a>
+            <a href="<?php echo site_url('/yumburger')?>">View All</a>
             </div>
         </div>
         <div class="container with--overflow">
@@ -150,9 +157,9 @@
                             </div>
                             <div class="price">
                             <p>Start at <br /><span><?php the_field('price');?></span></p>
-                            <p><?php the_field('category');?></p>
                             </div>
                         </div>
+                        <button class="btnAddtoCart">Add To Cart</button>
                     </div>
 
                 <?php endwhile;
@@ -170,7 +177,7 @@
             <div class="food__header flex justify--between align--center">
             <h2>Breakfast</h2>
             <span></span>
-            <a href="#">View All</a>
+            <a href="<?php echo site_url('/breakfast')?>">View All</a>
             </div>
         </div>
         <div class="container with--overflow">
@@ -205,9 +212,9 @@
                             </div>
                             <div class="price">
                             <p>Start at <br /><span><?php the_field('price');?></span></p>
-                            <p><?php the_field('category');?></p>
                             </div>
                         </div>
+                        <button class="btnAddtoCart">Add To Cart</button>
                     </div>
 
                 <?php endwhile;
@@ -219,6 +226,21 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
+
+    <div class="cart">
+        <div>
+            <h3>Cart</h3>
+            <button class="cart__close"><i class="fas fa-times"></i></button>
+            <div class="cart__wrapper"></div>
+        </div>
+        
+        <div>
+            <ul>
+                <li>Total</li>
+                <li id="total"></li>
+            </ul>
+        </div>
+    </div>
 
 <?php get_footer(); ?>

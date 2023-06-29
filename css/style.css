@@ -934,7 +934,12 @@
     font-weight: bold;
     }/*# sourceMappingURL=main.min.css.map */
 
-    .single__content ul{
+    .single__content .choices{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .single__content .star-rating{
         display: flex;
     }
 
@@ -953,4 +958,309 @@
 
     .card__wrapper .grid{
         min-height: 15rem;
+    }
+
+    .menu ul{
+        display: flex;
+        gap: 10px;
+    }
+
+    .menu ul a{
+        color: #fff;
+        padding: 6px;
+        border-radius: 3px;
+    }
+
+    .menu ul li.current_page_item a{
+        background: #f09400;
+    }
+
+    .cta{
+        min-height: 600px;
+        background-image: linear-gradient(
+            to right,
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0)), 
+            url('https://www.rappler.com/tachyon/2022/07/Jollibee-SLEX-December-16-2019-10.jpg');
+        background-size: cover;
+        background-position: center -40px;
+        /* background-repeat: no-repeat; */
+    }
+    
+    .cta__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 600px;
+        max-width: 540px;
+        width: 100%;
+        color: #fff;
+    }
+
+    .cta__wrapper h3{
+        font-size: clamp(10px, 10vw, 40px);
+    }
+    .cta__wrapper button{
+        max-width: 120px;
+        width: 100%;
+        padding: 10px 16px;
+        background-color: #f09400;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        text-transform: uppercase;
+    }
+
+    .modal{
+        position: fixed;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal.show{
+        display: flex;
+    }
+
+    .backdrop{
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        background-color: rgba(0,0,0,0.8);
+        z-index: -1;
+    }
+
+    .modal__main{
+        background-color: #fff;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .modal__header{
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .modal__header button{
+        background-color: transparent;
+        color: gray;
+        cursor: pointer;
+        font-size: 22px;
+        border: none;
+        /* transform: translateY(-10px); */
+    }
+
+    .form__group{
+        margin-bottom: 20px;
+    }
+
+    .form__group label,
+    .form__group input,
+    .form__group textarea{
+        display: block;
+        width: 100%;
+    }
+    .form__group input,
+    .form__group textarea{
+        padding: 10px 16px;
+        border: 1px solid #e6e6e6;
+        margin-top: 5px;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .form__group input:focus,
+    .form__group textarea:focus{
+        border-color: #e3163c;
+    }
+
+    .form__group textarea{
+        height: 200px;
+        resize: none;
+    }
+
+    input[type="submit"]{
+        padding: 10px 16px;
+        background-color: #f09400;
+        background-radius: 5px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .cart{
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        padding: 4rem;
+        z-index: 9999;
+        top:0;
+        right: -300px;
+        background-color: #fff;
+        box-shadow: -5px 50px 5px 2px rgba(0,0,0,0.04);
+        transition: .5s ease-in-out;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .cart ul{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #e6e6e6;
+        padding-top: 2rem;
+    }
+
+    .cart ul li:last-child{
+        font-weight: bold;
+    }
+
+    .cart.open{
+        right: 0;
+        transition: .5s ease-in-out;
+    }
+
+    .cart__close{
+        position: absolute;
+        top:40px;
+        right: 10px;
+    }
+
+    .cartItem{
+        display: flex;
+        align-items: flex-start;
+        gap:2rem;
+        position: relative;
+        margin-bottom: 10px;
+
+    }
+
+    .cartItem img{
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .cartItem button{
+        position: absolute;
+        top:30%;
+        left:-10%;
+        transform: translateY(-50%);
+        background: red;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: #fff;
+        border: none;
+    }
+
+    .btnAddtoCart{
+        display:block;
+        padding: 10px 16px;
+        background-color: #f09400;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .header__nav{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .header__nav button{
+        background-color: transparent;
+        border: none;
+        color: #fff;
+
+    }
+
+    .btnCart {
+        position: relative;
+    }
+    
+    .btnCart .count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+        border-radius: 50%;
+        color: #fff;
+        z-index: 9999;
+        background-color: #f09400;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page__hero{
+        padding: clamp(20px, 6vw, 40px) 0;
+        text-align: center;
+        background-color: red;
+        color: #fff;
+        border-top: 4px solid #f09400;
+    }
+
+    .page__hero h1{
+        font-size: clamp(30px, 6vw, 45px);
+    }
+
+    .full__width{
+        padding: clamp(20px, 6vw, 40px)
+    }
+
+    .full__width p{
+        font-size: 18px;
+    }
+
+    .two__cols{
+        padding: clamp(20px, 6vw, 40px) 0;
+    }
+
+    .two__cols__grid{
+        display: flex;
+        gap: 20px;
+    }
+
+    .two__cols__grid > div{
+        flex-basis: 50%;
+    }
+
+    .two__cols__grid img{
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .two__cols__grid h3{
+        color: red;
+        font-size: clamp(18px, 6vw, 30px);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .two__cols__grid p{
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .two__cols.row__reverse .two__cols__grid{
+        flex-direction: row-reverse;
     }

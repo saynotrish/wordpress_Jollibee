@@ -17,7 +17,7 @@
             </figure>
 
             <div class="single__content">
-                <ul>
+                <ul class="star-rating">
                 <?php $rating = get_field('rating');?>
                 <?php for($x = 1; $x < $rating; $x++) { ?>
                     <li><i class="fas fa-star"></i></li>
@@ -28,12 +28,14 @@
                 </p>
 
                 <h3>Options</h3>
-                <form action="">
-                    <ul class="flex">
-                        <li><input type="radio" name="option" /> Solo</li>
-                        <li><input type="radio" name="option" /> With Drinks</li>
-                    </ul>
-                </form>
+                <ul class="choices">
+                    <?php
+                        $options =  get_field('addons') ?>
+                
+                        <?php foreach( $options as $option): ?>
+                            <li><input type="checkbox" /> <?php echo $option; ?></li>
+                        <?php endforeach; ?>
+                </ul>
 
                 <div class="action">
                     <h2><?php the_field('price');?></h2>
@@ -43,6 +45,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div class="other">
     <div class="container">

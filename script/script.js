@@ -1,12 +1,15 @@
-const arr = ["bestseller", "chickenjoy", "burger", "breakfast"];
+const btnModal = document.querySelector('#btnModal');
+    const btnClose = document.querySelector('#btnClose');
+    const modal = document.querySelector('.modal');
 
-for (var i = 0; i < arr.length; i++) {
-    tns({
-    container: `#${arr[i]}`,
-    items: 4,
-    gutter: 150,
-    mouseDrag: true,
-    controls: false,
-    nav: false,
-    });
+    function addShowClass(){
+        modal.classList.add('show');
+    }
+
+    function removeShowClass(){
+        modal.classList.remove('show');
+    }
+if(btnModal && modal){
+    btnModal.addEventListener('click', addShowClass);
+    btnClose.addEventListener('click', removeShowClass);
 }
