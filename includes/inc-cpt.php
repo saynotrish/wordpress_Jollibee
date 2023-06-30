@@ -21,4 +21,3 @@ function jollibee_custom_post(){
     register_post_type('foods', $foods_args);
 }
 add_action('init', 'jollibee_custom_post');
- 
